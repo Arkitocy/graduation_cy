@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="zh-cn">
+<head>
+    <meta name="viewport" content="initial-scale=1, user-scalable=0, minimal-ui" charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="demo/lib/weui.min.css">
+    <link rel="stylesheet" href="demo/css/jquery-weui.css">
+    <link rel="stylesheet" href="demo/css/style.css">
+    <title>商品</title>
+    <!-- UC强制全屏 -->
+    <meta name="full-screen" content="yes">
+    <!-- QQ强制全屏 -->
+    <meta name="x5-fullscreen" content="true">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+            -webkit-text-size-adjust: none;
+        }
+
+        html {
+            font-size: 10px;
+        }
+
+        body {
+            background-color: #f5f5f5;
+            font-size: 1.2em;
+        }
+
+        .header {
+            height: 44px;
+            line-height: 44px;
+            border-bottom: 1px solid #ccc;
+            background-color: #eee;
+        }
+
+        .header h1 {
+            text-align: center;
+            font-size: 2rem;
+            font-weight: normal;
+        }
+
+        .content {
+            max-width: 640px;
+            margin: 0 auto;
+            background-color: #fff;
+        }
+
+        .content .item {
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-align: center;
+            -webkit-box-align: center;
+            box-align: center;
+            -webkit-align-items: center;
+            align-items: center;
+            padding: 3.125%;
+            border-bottom: 1px solid #ddd;
+            color: #333;
+            text-decoration: none;
+        }
+
+        .content .item img {
+            display: block;
+            width: 40px;
+            height: 40px;
+            border: 1px solid #ddd;
+        }
+
+        .content .item h3 {
+            display: block;
+            -webkit-box-flex: 1;
+            -webkit-flex: 1;
+            -ms-flex: 1;
+            flex: 1;
+            width: 100%;
+            max-height: 40px;
+            overflow: hidden;
+            line-height: 20px;
+            margin: 0 10px;
+            font-size: 1.2rem;
+        }
+
+        .content .item .date {
+            display: block;
+            height: 20px;
+            line-height: 20px;
+            color: #999;
+        }
+
+        .opacity {
+            -webkit-animation: opacity 0.3s linear;
+            animation: opacity 0.3s linear;
+        }
+
+        .weui-panel__hd:after {
+            border: none
+        }
+
+        .weui-cell:before {
+        }
+
+        {
+            border-top: 0px
+        }
+        @-webkit-keyframes opacity {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @keyframes opacity {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="demo/dist/dropload.css">
+</head>
+<body>
+<div class="content">
+    <!--<div class="swiper-container">-->
+    <!--&lt;!&ndash; Additional required wrapper &ndash;&gt;-->
+    <!--<div class="index-city"><img src="demo/images/nav-1.png"  />广州</div>-->
+    <!--<div class="swiper-wrapper">-->
+
+    <!--&lt;!&ndash; Slides &ndash;&gt;-->
+    <!--<div class="swiper-slide"><img src="demo/images/swiper-1.jpg" /></div>-->
+    <!--<div class="swiper-slide"><img src="demo/images/swiper-2.jpg" /></div>-->
+    <!--</div>-->
+    <!--&lt;!&ndash; If we need pagination &ndash;&gt;-->
+    <!--<div class="swiper-pagination"></div>-->
+    <!--</div>-->
+    <!--样品-->
+    <div class="shop_tuijian shop_list">
+        <div class="weui-cells__title weui-cells__title_shop_list"><img src="demo/images/best.png" width="22px"/>&nbsp;&nbsp;商品
+        </div>
+        <div class="weui-list-theme" id="displayDiv">
+
+        </div>
+    </div>
+    <!--门店-->
+
+    <!--<div class="weui-footer">-->
+    <!--<p class="weui-footer__links">-->
+    <!--<a href="demo/javascript:;" class="weui-footer__link">智能门店</a>-->
+    <!--</p>-->
+    <!--<p class="weui-footer__text">Copyright © 2019 广州微位科技</p>-->
+    <!--</div>-->
+    <!--<div class="foot-divs"></div>-->
+    <div class="weui-tabbar">
+        <a href="index.html" class="weui-tabbar__item weui-tabbar__item-index weui-bar__item--on">
+            <div class="weui-tabbar__icon">
+                <img src="demo/images/tab1.png" alt="">
+            </div>
+            <p class="weui-tabbar__label">首页</p>
+        </a>
+        <a href="goods.html" class="weui-tabbar__item weui-tabbar__item-index">
+            <div class="weui-tabbar__icon">
+                <img src="demo/images/tab5.png" alt="">
+            </div>
+            <p class="weui-tabbar__label">商品</p>
+        </a>
+        <!--连锁-->
+        <a href="template.html" class="weui-tabbar__item weui-tabbar__item-index">
+            <div class="weui-tabbar__icon">
+                <img src="demo/images/tab4.png" alt="">
+            </div>
+            <p class="weui-tabbar__label">定制</p>
+        </a>
+        <a href="myinfo.html" class="weui-tabbar__item weui-tabbar__item-index">
+            <div class="weui-tabbar__icon">
+                <img src="demo/images/tab8.png" alt="">
+            </div>
+            <p class="weui-tabbar__label">我的</p>
+        </a>
+    </div>
+</div>
+<!-- jQuery1.7以上 或者 Zepto 二选一，不要同时都引用 -->
+<script src="demo/examples/js/zepto.min.js"></script>
+<script src="demo/dist/dropload.min.js"></script>
+<script>
+    $(document).ready(function () {
+        function getUrlParam(name) {
+            var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
+            var r = window.location.search.substr(1).match(reg);  //匹配目标参数
+            if (r != null) return unescape(r[2]);
+            return null; //返回参数值
+        }
+
+        var token = getUrlParam("token");
+        if (token==null||token==""){
+
+        } else {
+            localStorage.setItem("token",token);
+        }
+        // 页数
+        let page = -1;
+
+        // dropload
+        $('.content').dropload({
+            scrollArea: window,
+            loadDownFn: function (me) {
+                page++;
+                // 拼接HTML
+                var result = '';
+                $.ajax({
+                    type: 'GET',
+                    url: 'product/getPageable/' + page,
+                    success: function (data) {
+                        console.log(data);
+                        var arrLen = data.content.length
+                        if (arrLen > 0) {
+                            for (var i = 0; i < arrLen; i++) {
+                                $("#displayDiv").append(
+                                    "<a class='weui-list-theme-item'>" +
+                                    "   <div class='weui-list-img'>" +
+                                    "       <img src='" + data.content[i].pictureSet[0].path.substr(1) + "' alt='' id='" + data.content[i].id + "'>" +
+                                    "   </div>" +
+                                    "   <div class='weui-list-title'>" +
+                                    "       <h3 id='templateTitle'>" + data.content[i].name + "</h3>" +
+                                    "       <div class='weui-flex'>" +
+                                    "           <div class='weui-flex-box'>" +
+                                    "               <span id='templateDetail'>点击图片查看详情</span>" +
+                                    "           </div>" +
+                                    "       </div>" +
+                                    "   </div>" +
+                                    "</a>"
+                                );
+
+                                console.log(data.content[i].id);
+                                $("#" + data.content[i].id).click(function () {
+                                    window.location.href = "goodsDetail.html?id=" + $(this).attr("id");
+                                });
+                            }
+                            // 如果没有数据
+                        } else {
+                            // 锁定
+                            me.lock();
+                            // 无数据
+                            me.noData();
+                        }
+                        // 为了测试，延迟1秒加载
+                        setTimeout(function () {
+                            // 插入数据到页面，放到最后面
+                            /*$('#displayDiv').append(result);*/
+                            // 每次数据插入，必须重置
+                            me.resetload();
+                        }, 1000);
+                    },
+                    error: function (xhr, type) {
+                        alert('Ajax error!');
+                        // 即使加载出错，也得重置
+                        me.resetload();
+                    }
+                });
+            }
+        });
+    });
+</script>
+</body>
+</html>

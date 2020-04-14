@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>智能门店</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="demo/lib/weui.min.css">
+    <link rel="stylesheet" href="demo/css/jquery-weui.css">
+    <link rel="stylesheet" href="demo/css/style.css">
+    <style>
+        .weui-panel__hd:after {
+            border: none
+        }
+
+        .weui-cell:before {
+        }
+
+        {
+            border-top: 0px
+        }
+    </style>
+</head>
+
+<body ontouchstart>
+<div class="swiper-container">
+    <!-- Additional required wrapper -->
+    <div class="swiper-wrapper" id="swip">
+
+        <!-- Slides -->
+        <!--<div class="swiper-slide"><img src="" id="pic1"/></div>-->
+        <!--<div class="swiper-slide"><img src="" id="pic2"/></div>-->
+    </div>
+    <!-- If we need pagination -->
+    <div class="swiper-pagination"></div>
+</div>
+<!--<div class="aui-flex aui-hot-news">-->
+    <!--<div class="aui-hot-news-title">-->
+        <!--<a href="news.html"> <img src="demo/images/hot-title.jpg" alt=""></a>-->
+    <!--</div>-->
+    <!--<div class="aui-flex-box">-->
+        <!--<div class="aui-flex-info-box">-->
+            <!--<div class="t_news">-->
+                <!--<div class="swiper-wrapper">-->
+
+                <!--</div>-->
+
+            <!--</div>-->
+        <!--</div>-->
+
+    <!--</div>-->
+<!--</div>-->
+<!--ad1-->
+<div class="weui-flex">
+    <div class="weui-flex__item">
+        <div class="placeholder" id="video"></div>
+    </div>
+</div>
+
+
+<!--ad1-->
+<!--头条资讯-->
+
+
+<div class="weui-tabbar">
+    <a href="index.html" class="weui-tabbar__item weui-tabbar__item-index weui-bar__item--on">
+        <div class="weui-tabbar__icon">
+            <img src="demo/images/tab1.png" alt="">
+        </div>
+        <p class="weui-tabbar__label">首页</p>
+    </a>
+    <a href="goods.html" class="weui-tabbar__item weui-tabbar__item-index">
+        <div class="weui-tabbar__icon">
+            <img src="demo/images/tab5.png" alt="">
+        </div>
+        <p class="weui-tabbar__label">商品</p>
+    </a>
+    <!--连锁-->
+    <a href="template.html" class="weui-tabbar__item weui-tabbar__item-index">
+        <div class="weui-tabbar__icon">
+            <img src="demo/images/tab4.png" alt="">
+        </div>
+        <p class="weui-tabbar__label">定制</p>
+    </a>
+    <a href="myinfo.html" class="weui-tabbar__item weui-tabbar__item-index">
+        <div class="weui-tabbar__icon">
+            <img src="demo/images/tab8.png" alt="">
+        </div>
+        <p class="weui-tabbar__label">我的</p>
+    </a>
+</div>
+
+
+<script src="demo/lib/jquery-2.1.4.js"></script>
+<script src="demo/lib/fastclick.js"></script>
+<script>
+    $(function () {
+        FastClick.attach(document.body);
+    });
+</script>
+<script src="demo/js/jquery-weui.js"></script>
+<script src="demo/js/swiper.js"></script>
+<script src="js/index.js"></script>
+
+<!--<script>-->
+    <!--$(".swiper-container").swiper({-->
+        <!--// loop: true,-->
+        <!--autoplay: 3000-->
+    <!--});-->
+    <!--$(".t_news").swiper({-->
+        <!--loop: true,-->
+        <!--autoplay: 5000-->
+    <!--});-->
+<!--</script>-->
+
+</body>
+
+</html>

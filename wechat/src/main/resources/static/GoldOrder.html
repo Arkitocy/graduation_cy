@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	  <meta name="viewport" content="initial-scale=1, user-scalable=0, minimal-ui" charset="UTF-8">
+	  <title>我的订单</title>
+	  <!-- UC强制全屏 -->
+	  <meta name="full-screen" content="yes">
+	  <!-- QQ强制全屏 -->
+	  <meta name="x5-fullscreen" content="true">
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<link rel="stylesheet" href="demo/lib/weui.min.css">
+<link rel="stylesheet" href="demo/css/jquery-weui.css">
+<link rel="stylesheet" href="demo/css/style.css">
+	  <meta name="viewport" content="initial-scale=1, user-scalable=0, minimal-ui" charset="UTF-8">
+	  <title>加载底部</title>
+	  <!-- UC强制全屏 -->
+	  <meta name="full-screen" content="yes">
+	  <!-- QQ强制全屏 -->
+	  <meta name="x5-fullscreen" content="true">
+
+<style>
+
+	.weui-panel__hd:after{border:none}
+	  .weui-panel:after{border:none}
+	  .weui-cell:before{border-top:0px}
+	  .page__pd{min-height:500px}
+	  .weui-navbar{background:#fff;border-bottom:1px solid #fff;}
+	  .weui-navbar__item:after{border-right:0px}
+	  .weui-navbar__item.weui-bar__item--on{background:#fff;border-bottom:1px solid #f3ad11;color:#f3ad11}
+	  .weui-panel_access{border-top:8px solid #e5e5e5}
+	 .weui-cell__bd{text-align:right;padding-right:15px;padding-bottom:15px}
+	 .weui-cell_link .weui-cell__bd{text-align:left;padding-bottom:0px;font-size:15px;}
+	 .weui-cell__bd span{color:#f30}
+	 .weui-cell__ft{float:right;font-size:14px;}
+	 .weui-media-box{padding:2px 15px}
+	  .weui-cell__bd button{color:#f3ad11;border:1px solid #f3ad11;float:left;margin-top:2px;font-size:13px;border-radius:5px;display:block;width:70px;height:20px;text-align:center;margin-left:85px;}
+	 .weui-cell__bd a{color:#f3ad11;border:1px solid #f3ad11;float:left;margin-top:2px;font-size:13px;border-radius:5px;display:block;width:70px;height:20px;text-align:center;margin-left:85px;}
+	.weui-media-box{padding:0px 15px 15px}
+	  .weui-cell__bd{color:#333}
+	.weui-media-box__desc-tech{padding:0px 15px;color:#999;font-size:14px;}
+	.weui-cell__ft{color:#f3ad11}
+	  .weui-cells:before{border-top:0px;}
+	  .weui-cells-tabbar_tab span{background: #fff;
+		  color: #f3ad11;
+		  border-radius: 20px;
+		  display: block;
+		  float: left;
+		  font-size: 12px;
+		  padding: 0px 5px;
+		  margin-left: 0.3rem;
+		  border:1px solid #f3ad11
+	  }
+	.tech-s{color:#1296db}
+	* {
+		margin: 0;
+		padding: 0;
+		-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+		-webkit-text-size-adjust: none;
+	}
+
+	html {
+		font-size: 10px;
+	}
+
+	body {
+		background-color: #f5f5f5;
+		font-size: 1.2em;
+	}
+
+	.header {
+		height: 44px;
+		line-height: 44px;
+		border-bottom: 1px solid #ccc;
+		background-color: #eee;
+	}
+
+	.header h1 {
+		text-align: center;
+		font-size: 2rem;
+		font-weight: normal;
+	}
+
+	.content {
+		max-width: 640px;
+		margin: 0 auto;
+		background-color: #fff;
+	}
+
+	.content .item {
+		display: -webkit-box;
+		display: -webkit-flex;
+		display: -ms-flexbox;
+		display: flex;
+		-ms-flex-align: center;
+		-webkit-box-align: center;
+		box-align: center;
+		-webkit-align-items: center;
+		align-items: center;
+		padding: 3.125%;
+		border-bottom: 1px solid #ddd;
+		color: #333;
+		text-decoration: none;
+	}
+
+	.content .item img {
+		display: block;
+		width: 40px;
+		height: 40px;
+		border: 1px solid #ddd;
+	}
+
+	.content .item h3 {
+		display: block;
+		-webkit-box-flex: 1;
+		-webkit-flex: 1;
+		-ms-flex: 1;
+		flex: 1;
+		width: 100%;
+		max-height: 40px;
+		overflow: hidden;
+		line-height: 20px;
+		margin: 0 10px;
+		font-size: 1.2rem;
+	}
+
+	.content .item .date {
+		display: block;
+		height: 20px;
+		line-height: 20px;
+		color: #999;
+	}
+
+	.opacity {
+		-webkit-animation: opacity 0.3s linear;
+		animation: opacity 0.3s linear;
+	}
+
+	.weui-panel__hd:after {
+		border: none
+	}
+
+	.weui-cell:before {
+	}
+
+	{
+		border-top: 0px
+	}
+	@-webkit-keyframes opacity {
+		0% {
+			opacity: 0;
+		}
+		100% {
+			opacity: 1;
+		}
+	}
+
+	@keyframes opacity {
+		0% {
+			opacity: 0;
+		}
+		100% {
+			opacity: 1;
+		}
+	}
+   </style>
+  </head>
+
+  <body ontouchstart>
+	<div class="page__pd">
+	<div class="weui-tab">
+      <div class="weui-navbar">
+        <a class="weui-navbar__item weui-bar__item--on" href="#tab1" id="state1">
+       全部订单
+        </a>
+        <a class="weui-navbar__item" href="#tab2" id="state2">
+			待付款
+        </a>
+        <a class="weui-navbar__item" href="#tab3" id="state3">
+          待发货
+        </a>
+		  <a class="weui-navbar__item" href="#tab4" id="state4">
+			  待收货
+		  </a>
+		  <a class="weui-navbar__item" href="#tab5" id="state5">
+			  已完成
+		  </a>
+      </div>
+      <div class="weui-tab__bd">
+
+			  <div id="tab1" class="weui-tab__bd-item weui-tab__bd-item--active" >
+
+
+
+			  </div>
+        <div id="tab2" class="weui-tab__bd-item">
+
+
+        </div>
+        <div id="tab3" class="weui-tab__bd-item">
+
+        </div>
+		  <div id="tab4" class="weui-tab__bd-item">
+
+		  </div>
+		  <div id="tab5" class="weui-tab__bd-item">
+
+		  </div>
+      </div>
+    </div>
+
+
+	</div>
+    <div class="weui-tabbar">
+        <a href="index.html" class="weui-tabbar__item weui-tabbar__item-index weui-bar__item--on">
+            <div class="weui-tabbar__icon">
+                <img src="demo/images/tab1.png" alt="">
+            </div>
+            <p class="weui-tabbar__label">首页</p>
+        </a>
+        <a href="goods.html" class="weui-tabbar__item weui-tabbar__item-index">
+            <div class="weui-tabbar__icon">
+                <img src="demo/images/tab5.png" alt="">
+            </div>
+            <p class="weui-tabbar__label">商品</p>
+        </a>
+        <!--连锁-->
+        <a href="template.html" class="weui-tabbar__item weui-tabbar__item-index">
+            <div class="weui-tabbar__icon">
+                <img src="demo/images/tab4.png" alt="">
+            </div>
+            <p class="weui-tabbar__label">定制</p>
+        </a>
+        <a href="myinfo.html" class="weui-tabbar__item weui-tabbar__item-index">
+            <div class="weui-tabbar__icon">
+                <img src="demo/images/tab8.png" alt="">
+            </div>
+            <p class="weui-tabbar__label">我的</p>
+        </a>
+    </div>
+
+    <script src="demo/examples/js/zepto.min.js"></script>
+    <script src="demo/dist/dropload.min.js"></script>
+    <script src="demo/lib/fastclick.js"></script>
+
+    <script>
+  $(function() {
+    FastClick.attach(document.body);
+  });
+</script>
+    <script src="demo/js/jquery-weui.js"></script>
+	<script src="js/table2.js"></script>
+    <script src="js/table3.js"></script>
+    <script src="js/table4.js"></script>
+    <script src="js/table5.js"></script>
+    <script>
+        $(document).ready(function () {
+
+            let page = 0;
+
+            let state = getUrlParam("state");
+
+            if(state==0){
+                $("#state2").click();
+            }else if (state==1){
+                $("#state3").click();
+            } else if (state==2){
+                $("#state4").click();
+            }else if (state==3){
+                $("#state5").click();
+            } else if (state==4){
+                $("#state1").click();
+            }
+
+
+            // dropload
+            $('.content').dropload({
+                scrollArea: window,
+                loadDownFn: function (me) {
+                    page++;
+                    // 拼接HTML
+
+                        $.ajax({
+                            type: 'GET',
+                            url: "/xszadmin/GoldOrder1/findAllByBuyerId/"+page,
+                            headers:{"token":localStorage.getItem("token")},
+                            success: function (data) {
+                                console.log(data);
+
+                                var content=data.data.content;
+                                var arrLen = data.data.content.length;
+                                if (arrLen > 0) {
+                                    for(var i=0;i<content.length;i++  ) {
+                                        var contentdata = content[i];
+
+                                        var id = contentdata.id;
+                                        var buyerName = contentdata.buyerName;
+                                        var createTime = contentdata.createTime;
+                                        var type1 = contentdata.type;
+                                        var type;
+                                        switch(type1){
+                                            case 0:
+                                                type="标准";
+                                                break;
+                                            case 1:
+                                                type="定制";
+                                                break;
+
+                                            default:
+                                                type="其他";
+                                                break;
+                                        }
+
+                                        var state1 = contentdata.state;
+                                        var state;
+                                        var label;
+                                        switch(state1){
+                                            case 0:
+                                                state="待付款";
+                                                label="去支付";
+                                                break;
+                                            case 1:
+                                                state="待发货";
+                                                label="申请退款";
+                                                break;
+                                            case 2:
+                                                state="待收货";
+                                                label="确认收货";
+                                                break;
+                                            case 3:
+                                                state="已完成";
+                                                label="查看详情";
+                                                break;
+                                            default:
+                                                state="其他";
+                                                break;
+                                        }
+                                        var totalPrice = contentdata.totalPrice;
+                                        var orderDetails = contentdata.orderDetails;
+
+                                        //
+                                        // var productName=orderDetails[0].productName;
+                                        //    var productQuantity=orderDetails[0].productQuantity;
+
+                                        console.log(orderDetails);
+                                        if ( orderDetails.length>1) {
+                                            $("#tab1").append(
+                                                " <div class='weui-panel weui-panel_access'>" +
+                                                '<div class="weui-panel__hd"><img src="demo/images/store_icon.png" style="float:left;margin-right:5px;width:22px" alt="">订单类型：' + type + '</div>' +
+                                                '<div class="weui-panel__bd">'
+                                            );
+                                            for (var j = 0; j < orderDetails.length; j++) {
+                                                var productName = orderDetails[j].productName;
+                                                var productQuantity = orderDetails[j].productQuantity;
+                                                var productPicture = orderDetails[j].productPicture.substr(1);
+                                                console.log(productName);
+                                                $("#tab1").append(
+                                                    '<a href="order-detail.html?id='+id+'" class="weui-media-box weui-media-box_appmsg">' +
+                                                    '<div class="weui-media-box__hd" >' +
+                                                    '<img class="weui-media-box__thumb" src="' + productPicture + '" alt="">' +
+                                                    "</div>"+
+                                                    '<div class="weui-media-box__bd"  >'+
+                                                    '<h4 class="weui-media-box__title"><span class="weui-cell__ft">x' + productQuantity + '</span>' + productName + '</h4>'+
+                                                    "</div>"+
+                                                    "</a>"
+                                                );
+                                            }
+                                            // '<h4 class="weui-media-box__title"><span class="weui-cell__ft">x' + productQuantity + '</span>' + productName + '</h4>'+
+                                            $("#tab1").append(
+                                                '<p class="weui-media-box__desc">&emsp; &emsp;购买人：' + buyerName + '<br>&emsp; &emsp;时间：' + createTime + '</p>' +
+                                                '<p style="font-size:14px;color:#30af08">&emsp; &emsp;订单状态：' +state+ '</p>' +
+                                                "</div>" +
+                                                "</a>" +
+                                                ' <div class="weui-cells weui-cells-tabbar weui-cells-tabbar_tab">'+
+                                                ' &emsp; &emsp; &emsp; &emsp;<span name="label" id="label'+id+'">'+label+'</span><span  style="display:none" id = "del_label'+id+'" name="del_label">删除订单</span>'+
+                                                " </div>" +
+                                                '<div class="weui-cell__bd">总价格：<span>' + totalPrice + '</span></div>' +
+                                                "</div>"
+                                            );
+                                            // console.log("111type1"+type1+"i"+i);
+                                            // if(type1==0||type1==3){
+                                            //
+                                            //     $("#del_label"+i).attr("style","block")
+                                            // }
+                                        }else{
+                                            var productName=orderDetails[0].productName;
+                                            var productQuantity=orderDetails[0].productQuantity;
+                                            var productPicture = orderDetails[0].productPicture.substr(1);
+                                            $("#tab1").append(
+                                                " <div class='weui-panel weui-panel_access'>" +
+                                                '<div class="weui-panel__hd"><img src="demo/images/store_icon.png" style="float:left;margin-right:5px;width:22px" alt="">订单类型：' + type + '</div>' +
+                                                '<a class="weui-panel__bd">' +
+                                                '<a href="order-detail.html?id='+id+'" class="weui-media-box weui-media-box_appmsg">' +
+                                                '<div class="weui-media-box__hd" >' +
+                                                '<img class="weui-media-box__thumb" src="' + productPicture + '" alt="">' +
+                                                "</div>" +
+                                                '<div class="weui-media-box__bd"  >'+
+                                                '<h4 class="weui-media-box__title"><span class="weui-cell__ft">x' + productQuantity + '</span>' + productName + '</h4>'+
+                                                '<p class="weui-media-box__desc">购买人：' + buyerName + '<br>时间：' + createTime + '</p>' +
+                                                '<p style="font-size:14px;color:#30af08">订单状态：' +state+ '</p>' +
+                                                "</div>" +
+                                                "</a>" +
+                                                ' <div class="weui-cells weui-cells-tabbar weui-cells-tabbar_tab">'+
+                                                ' &emsp; &emsp; &emsp; &emsp;<span name="label" id="label'+id+'">'+label+'</span><span  style="display:none" id = "del_label'+id+'" name="del_label">删除订单</span>'+
+
+                                                " </div>" +
+                                                '<div class="weui-cell__bd">总价格：<span>' + totalPrice + '</span></div>' +
+                                                "</div>"
+                                            );
+                                        }
+                                        console.log("state1"+state1+"id"+id);
+                                        if(state1==0||state1==3){
+
+                                            // $("#del_label"+i).attr("style","block")
+                                            $("#del_label"+id).show();
+                                        }else{
+                                            $("#del_label"+id).hide();
+                                        }
+                                    }
+                                    $("span[name='label']").click(function(){
+                                        var id=this.id;
+                                        //从最后面开始，截取一位
+                                        var id1 = id.substr(5);
+                                        $.ajax({
+                                            type: "GET",
+                                            url: "/xszadmin/GoldOrder1/findById/"+ id1,
+                                            success: function(json1){
+                                                var order1 = json1.data;
+                                                console.log(order1.id);
+                                                console.log(order1.id);
+                                                if(order1.state==0||order1.state==2){
+                                                    var state=order1.state+1;
+                                                    $.ajax({
+                                                        type: "POST",
+                                                        url: "/xszadmin/GoldOrder1/updatestate/"+ order1.id+"/"+state,
+                                                        success: function(json){
+                                                            location.reload();
+                                                            if(state==1){alert("付款成功");}else if(state==3){alert("已确认收货");}
+
+
+                                                        }
+                                                    });
+                                                }else if(order1.state==1){
+                                                    $.ajax({
+                                                        type: "DELETE",
+                                                        url: "/xszadmin/GoldOrder1/delete/"+ order1.id,
+                                                        success: function(json){
+                                                            console.log(json);
+                                                            if(json.code==200){
+                                                                location.reload();
+                                                                alert("退款成功");
+                                                            }else{
+                                                                alert("下单超过俩个小时，退款失败");
+                                                            }
+                                                        }
+                                                    });
+                                                }else if(order1.state==3){
+                                                    window.location.href="order-detail.html?id="+id1;
+                                                }
+
+                                            }
+                                        });
+                                    });
+
+
+                                    $("span[name='del_label']").click(function(){
+                                        var id=this.id;
+                                        //从最后面开始，截取一位
+                                        var id1 = id.substr(9);
+
+                                        $.ajax({
+                                            type: "DELETE",
+                                            url: "/xszadmin/GoldOrder1/masterDelete/"+ id1,
+                                            success: function(json){
+                                                location.reload();
+                                                alert("删除成功");
+
+                                            }
+                                        });
+                                    });
+                                    // 如果没有数据
+                                } else {
+                                    // 锁定
+                                    me.lock();
+                                    // 无数据
+                                    me.noData();
+                                }
+                                // 为了测试，延迟1秒加载
+                                setTimeout(function () {
+                                    // 插入数据到页面，放到最后面
+                                    /*$('#displayDiv').append(result);*/
+                                    // 每次数据插入，必须重置
+                                    me.resetload();
+                                }, 1000);
+                            },
+                            error: function (xhr, type) {
+                                alert('Ajax error!');
+                                // 即使加载出错，也得重置
+                                me.resetload();
+                            }
+                        });
+
+                    }
+
+            });
+        });
+
+
+        //获取url中的参数
+        function getUrlParam(name) {
+            var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
+            var r = window.location.search.substr(1).match(reg);  //匹配目标参数
+            if (r != null) return unescape(r[2]);
+            return null; //返回参数值
+        }
+
+
+
+    </script>
+  </body>
+
+</html>

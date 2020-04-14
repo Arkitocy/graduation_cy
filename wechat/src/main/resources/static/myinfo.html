@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>个人中心</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="demo/lib/weui.min.css">
+    <link rel="stylesheet" href="demo/css/jquery-weui.css">
+    <link rel="stylesheet" href="demo/css/style.css">
+    <style>
+        .weui-panel__hd:after {
+            border: none
+        }
+
+        .weui-cell:before {
+            border-top: 0px
+        }
+
+        .page__pd {
+            min-height: 500px
+        }
+
+        a.weui-media-box {
+            color: #fff
+        }
+
+        .weui-media-box__thumb {
+            border-radius: 80px;
+        }
+
+        .weui-media-box_appmsg .weui-media-box__hd {
+            width: 70px;
+            height: 70px;
+            line-height: 70px;
+        }
+
+        .weui-media-box__desc em {
+            background: #fff;
+            border-radius: 20px;
+            color: #f3ad11;
+            font-style: normal;
+            font-size: 13px;
+            padding: 1px 6px;
+        }
+
+        .weui-cell__ft {
+            float: right;
+            color: #fff;
+            height: 32px;
+            width: 80px;
+            line-height: 32px;
+            text-align: center;
+            background-image: linear-gradient(to right, #f6dca9, #f3b63f);
+            border-radius: 30px 0 0 30px;
+            position: absolute;
+            right: 0px;
+            top: 21px;
+            font-size: 15px;
+        }
+
+        .weui-tabbar-s {
+            width: 100%;
+            display: flex;
+            height: 50px
+        }
+
+        .weui-tabbar-s .weui-tabbar__item {
+            display: block;
+            -webkit-box-flex: 1;
+            -webkit-flex: 1;
+            flex: 1;
+            padding: 5px 0 0;
+            font-size: 0;
+            color: #999;
+            text-align: center;
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+        }
+
+        .weui-grid__icons {
+            width: 100%;
+            line-height: 33px;
+            height: 33px;
+            margin: 0px auto;
+            color: #f30;
+            font-size: 16px;
+            text-align: center
+        }
+
+        .weui-flex_index {
+            padding: 10px 0px;
+            margin-bottom: 0px;
+        }
+
+        .weui-panel__hd {
+            padding: 5px 15px 10px;
+            border-top: 6px solid #e5e5e5;
+            border-bottom: 1px solid #e5e5e5;
+        }
+
+        .weui-panel__hd span {
+            font-weight: bold;
+            color: #f3ad11;
+            font-size: 18px
+        }
+
+        .swiper-container {
+            width: 100%;
+            border-top: 6px solid #e5e5e5;
+        }
+
+        .overtimes {
+            float: right;
+            color: #f30;
+            font-size: 14px
+        }
+    </style>
+</head>
+
+<body ontouchstart>
+<!--<div class="page__pd">-->
+    <div class="weui-panel weui-panel_access" style="background:#f3ad11;padding:10px 0px;">
+        <div class="weui-panel__bd">
+            <a href="/xszadmin/demo/javascript:;" class="weui-media-box weui-media-box_appmsg">
+                <div class="weui-media-box__hd">
+                    <img class="weui-media-box__thumb" id="loginuheadimgurl" alt="">
+                </div>
+                <div class="weui-media-box__bd">
+                <h4 class="weui-media-box__title"><label id="loginuname"></label></h4>
+                <!--<p class="weui-media-box__desc">-->
+                <!--<em>Lv2.金牌会员</em>-->
+                <!--</p>-->
+                <!---->
+                </div>
+            </a>
+
+        </div>
+    </div>
+    <div class="weui-flex weui-flex_index">
+        <!--<div class="weui-flex__item">
+          <a href="/xszadmin/demo/package.html">
+            <div class="weui-grid__icons">
+             10000000
+            </div>
+          <p class="weui-grid__label" style="color:#f3ad11">
+            我的余额
+          </p>
+          </a>
+        </div>-->
+        <div class="weui-flex__item">
+            <a href="GoldOrder.html?state=全部订单">
+                <div class="weui-grid__icon">
+                    <img src="/xszadmin/demo/images/1-11.png" alt="">
+                </div>
+                <p class="weui-grid__label">
+                    全部订单
+                </p>
+            </a>
+        </div>
+
+        <div class="weui-flex__item">
+            <a href="/xszadmin/addressIndex.html?midupdate=1">
+                <div class="weui-grid__icon">
+                    <img src="/xszadmin/demo/images/myAddr.png" alt="">
+                </div>
+                <p class="weui-grid__label">
+                    我的收货地址
+                </p>
+            </a>
+        </div>
+    </div>
+
+<!--</div>-->
+
+<div class="swiper-container">
+    <a href="GoldOrder.html?state=4"><div class="weui-panel__hd"><span>|</span> 我的订单</div></a>
+    <!-- Additional required wrapper -->
+    <div class="weui-flex weui-flex_index">
+        <div class="weui-flex__item">
+            <a href="GoldOrder.html?state=0">
+                <div class="weui-grid__icon">
+                    <img src="/xszadmin/demo/images/che-4.png" alt="">
+                </div>
+                <p class="weui-grid__label">
+                    待付款
+                </p>
+            </a>
+        </div>
+        <div class="weui-flex__item">
+            <a href="GoldOrder.html?state=1">
+                <div class="weui-grid__icon">
+                    <img src="/xszadmin/demo/images/1-14.png" alt="">
+                </div>
+                <p class="weui-grid__label">
+                    待发货
+                </p>
+            </a>
+        </div>
+        <div class="weui-flex__item">
+            <a href="GoldOrder.html?state=2">
+                <div class="weui-grid__icon">
+                    <img src="/xszadmin/demo/images/1-11.png" alt="">
+                </div>
+                <p class="weui-grid__label">
+                    待收货
+                </p>
+            </a>
+        </div>
+        <div class="weui-flex__item">
+            <a href="GoldOrder.html?state=3">
+                <div class="weui-grid__icon">
+                    <img src="/xszadmin/demo/images/talk.png" alt="">
+                </div>
+                <p class="weui-grid__label">
+                    已完成
+                </p>
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="weui-panel__hd"><span>|</span> 个人中心</div>
+<div class="weui-flex weui-flex_index">
+    <div class="weui-flex__item">
+        <a href="https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx16c4ea9bf1f2a099&redirect_uri=http://arkitocy.ngrok2.xiaomiqiu.cn/xszadmin/url/t4&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect">
+            <div class="weui-grid__icon">
+                <img src="/xszadmin/demo/images/che-1.png" alt="">
+            </div>
+            <p class="weui-grid__label">
+                注册
+            </p>
+        </a>
+    </div>
+
+    <!--<div class="weui-flex__item">
+      <a href="/xszadmin/demo/set.html">
+        <div class="weui-grid__icon">
+          <img src="/xszadmin/demo/images/set.png" alt="">
+        </div>
+        <p class="weui-grid__label">
+          系统设置
+        </p>
+      </a>
+    </div>-->
+    <div class="weui-flex__item">
+        <a href="https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx16c4ea9bf1f2a099&redirect_uri=http://arkitocy.ngrok2.xiaomiqiu.cn/xszadmin/url/t4&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect" class="needs">
+            <div class="weui-grid__icon">
+                <img src="/xszadmin/demo/images/che-6.png" alt="">
+            </div>
+            <p class="weui-grid__label">
+                推荐好友
+            </p>
+        </a>
+    </div>
+</div>
+</div>
+
+
+
+<div class="weui-tabbar">
+    <a href="index.html" class="weui-tabbar__item weui-tabbar__item-index weui-bar__item--on">
+        <div class="weui-tabbar__icon">
+            <img src="demo/images/tab1.png" alt="">
+        </div>
+        <p class="weui-tabbar__label">首页</p>
+    </a>
+    <a href="goods.html" class="weui-tabbar__item weui-tabbar__item-index">
+        <div class="weui-tabbar__icon">
+            <img src="demo/images/tab5.png" alt="">
+        </div>
+        <p class="weui-tabbar__label">商品</p>
+    </a>
+    <!--连锁-->
+    <a href="template.html" class="weui-tabbar__item weui-tabbar__item-index">
+        <div class="weui-tabbar__icon">
+            <img src="demo/images/tab4.png" alt="">
+        </div>
+        <p class="weui-tabbar__label">定制</p>
+    </a>
+    <a href="myinfo.html" class="weui-tabbar__item weui-tabbar__item-index">
+        <div class="weui-tabbar__icon">
+            <img src="demo/images/tab8.png" alt="">
+        </div>
+        <p class="weui-tabbar__label">我的</p>
+    </a>
+</div>
+
+</body>
+<script src="demo/lib/jquery-2.1.4.js"></script>
+<script src="demo/lib/fastclick.js"></script>
+<script>
+    $(function () {
+        FastClick.attach(document.body);
+    });
+</script>
+<script src="demo/js/jquery-weui.js"></script>
+<script src="demo/js/swiper.js"></script>
+
+<script>
+    $(".swiper-container").swiper({
+        loop: true,
+        autoplay: 5000
+    });
+</script>
+<script src="js/myinfo.js"></script>
+</body>
+
+</html>

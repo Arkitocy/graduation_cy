@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>智能门店</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <meta name="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
+">
+    <link rel="stylesheet" href="demo/lib/weui.min.css">
+    <link rel="stylesheet" href="demo/css/jquery-weui.css">
+    <link rel="stylesheet" href="demo/css/style.css">
+    <style>
+        .weui-article{padding:10px 10px 2px;}
+        .weui-article section{margin-bottom:0px}
+        .weui-article p{margin:0;color:#666;font-size:14px}
+        .weui-cells:before{border-top:0px;}
+        .weui-tab{min-height:300px;border-top:6px solid #e5e5e5}
+        .weui-navbar{background:#fff}
+        .weui-navbar__item.weui-bar__item--on{background:#f3ad11;color:#fff}
+        .weui-media-box_store{padding:0px 15px;}
+        .weui-media-box__desc_store{width:94%;padding:0px 3% 10px;color:#666;font-size:14px;}
+        .weui-media-box__desc_start{color:#f30}
+        .weui-cell_primary p{font-size:14px}
+    </style>
+</head>
+
+<body ontouchstart>
+
+<div class="swiper-container" id="navHead">
+    <header class="aui-navBar aui-navBar-bg aui-navBar-fixed" id="nav-wrap">
+        <a href="javascript:history.back()" class="aui-navBar-item">
+            <img src="demo/images/return.png" style="width:20px;margin:11px">
+        </a>
+    </header>
+
+    <!-- Additional required wrapper -->
+    <div class="swiper-wrapper">
+
+        <!-- Slides -->
+        <div class="swiper-slide"><img src="" id="picture1"/></div>
+        <div class="swiper-slide"><img src="" id="picture2"/></div>
+    </div>
+    <!-- If we need pagination -->
+    <div class="swiper-pagination"></div>
+</div>
+<article class="weui-article">
+    <section>
+        <!--<p class="title" style="color:#333;line-height:32px;font-size:18px" id="title"></p>
+        <p>主修：奔驰宝马奥迪</p>
+        <div class="weui-cells weui-cells-tabbar weui-cells-tabbar_tab">
+            <span style="background:#319206">免费wifi</span><span style="background:#1296db">免费停车</span><span style="background:#d81e06">可带宠物</span>
+        </div>-->
+
+        <div class="weui-cells" style="padding:0px;margin:0px;">
+            <a class="weui-cell weui-cell_access" href="javascript:;" style="padding:8px 0px">
+                <div class="weui-cell__hd"><img src="demo/images/nav-5.png" alt="" style="width:18px;margin-right:7px;display:block"></div>
+                <div class="weui-cell__bd weui-cell_primary">
+                    <p>在线客服时间：8:30~18:00</p>
+                </div>
+            </a>
+
+            <div class="weui-cell">
+                <div class="weui-cell__hd">
+                    <label class="weui-label">模板名</label>
+                </div>
+                <div class="weui-cell__bd">
+                    <label class="weui-label" id="templateName"></label>
+                </div>
+            </div>
+
+            <div class="weui-cell weui-cell_select weui-cell_select-after">
+                <div class="weui-cell__hd">
+                    <label class="weui-label">分类</label>
+                </div>
+                <div class="weui-cell__bd">
+                    <select class="weui-select" name="select2" id="fb"></select>
+                </div>
+            </div>
+
+            <div class="weui-cell weui-cell_select weui-cell_select-after">
+                <div class="weui-cell__hd">
+                    <label class="weui-label">数量</label>
+                </div>
+                <div>
+                    <div class="weui-count">
+                        <a class="weui-count__btn weui-count__decrease" id="decrease"></a>
+                        <input class="weui-count__number" value="1" id="num"/>
+                        <a class="weui-count__btn weui-count__increase" id="increase"></a>
+                    </div>
+                </div>
+            </div>
+
+            <!--<div class="weui-flex">
+                <div><div class="weui-label">数量</div></div>
+                <div class="weui-flex__item"><div class="placeholder"></div></div>
+                <div>
+                    <div class="weui-count">
+                        <a class="weui-count__btn weui-count__decrease" id="decrease"></a>
+                        <input class="weui-count__number" value="1" id="num"/>
+                        <a class="weui-count__btn weui-count__increase" id="increase"></a>
+                    </div>
+                </div>
+            </div>-->
+
+
+        </div>
+    </section>
+</article>
+<br>
+<div class="weui-tab">
+    <div class="weui-navbar">
+        <a class="weui-navbar__item weui-bar__item--on" href="#tab1">
+            商品描述
+        </a>
+        <a class="weui-navbar__item" href="#tab2">
+            包装规格
+        </a>
+    </div>
+
+    <div class="weui-tab__bd">
+        <div id="tab1" class="weui-tab__bd-item weui-tab__bd-item--active">
+            <article class="weui-article">
+                <section>
+                    <h3>商品介绍</h3>
+                    <p id="introduce">
+
+                    </p>
+                </section>
+            </article>
+        </div>
+        <div id="tab2" class="weui-tab__bd-item">
+            <div class="weui-panel__bd">
+                <div class="weui-cells__group weui-cells__group_form">
+                    <div class="weui-cells weui-cells_form" aria-disabled="true">
+                        <div class="weui-cell">
+                            <div class="weui-cell__hd"><label class="weui-label">商品材质</label></div>
+                            <div class="weui-cells__title" id="goodsMaterial"></div>
+                        </div>
+                        <div class="weui-cell">
+                            <div class="weui-cell__hd"><label class="weui-label">商品尺寸</label></div>
+                            <div class="weui-cells__title" id="goodsSize"></div>
+                        </div>
+                        <div class="weui-cell">
+                            <div class="weui-cell__hd"><label class="weui-label">商品重量</label></div>
+                            <div class="weui-cells__title" id="goodsWeight"></div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="weui-footer">
+    <p class="weui-footer__links">
+        <a href="javascript:;" class="weui-footer__link">智能门店</a>
+    </p>
+    <p class="weui-footer__text">Copyright © 2019 广州微位科技</p>
+</div>
+<div class="foot-divs"></div>
+<div class="aui-reserve-footer">
+    <a class="aui-reserve-footer-two">
+        <div class="aui-reserve-footer-inner">
+            <div class="aui-reserve-text" id="pictureUpload">上传照片</div>
+        </div>
+    </a>
+</div>
+
+
+
+<script src="demo/lib/jquery-2.1.4.js"></script>
+<script src="demo/lib/fastclick.js"></script>
+<script>
+    $(function() {
+        FastClick.attach(document.body);
+    });
+</script>
+<script src="demo/js/jquery-weui.js"></script>
+<script src="demo/js/swiper.js"></script>
+<script src="js/templateDetail.js"></script>
+
+<script>
+    $(".swiper-container").swiper({
+        loop: true,
+        autoplay: 3000
+    });
+
+</script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        var navHeight = $("#navHead").offset().top;
+        var navFix = $("#nav-wrap");
+        $(window).scroll(function() {
+            if ($(this).scrollTop() > navHeight) {
+                navFix.addClass("aui-flex");
+            } else {
+                navFix.removeClass("aui-flex");
+            }
+        })
+    });
+
+    $(document).ready(function() {
+        $(".btn-slide").click(function() {
+            $("#show").slideToggle();
+        });
+    });
+</script>
+</body>
+
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>私人定制</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <meta name="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
+">
+    <link rel="stylesheet" href="demo/lib/weui.min.css">
+    <link rel="stylesheet" href="demo/css/jquery-weui.css">
+    <link rel="stylesheet" href="demo/css/style.css">
+    <style>
+        body {
+            background: #e5e5e5
+        }
+
+        .weui-cells:before {
+            border-top: 0px;
+        }
+
+        .weui-cells-tabbar_tab span {
+            background: #fff;
+            color: #bfbfbf;
+            border-radius: 20px;
+            display: block;
+            float: left;
+            font-size: 12px;
+            padding: 0px 5px;
+            margin-left: 0.3rem;
+            border: 1px solid #bfbfbf
+        }
+
+        .aui-flex-info {
+            font-size: 14px;
+            color: #666;
+            line-height: 30px;
+        }
+
+        .weui-cell_primary .weui-cell__ft:after {
+            content: " ";
+            display: inline-block;
+            height: 6px;
+            width: 6px;
+            border-width: 2px 2px 0 0;
+            border-color: #c8c8cd;
+            border-style: solid;
+            -webkit-transform: matrix(.71, .71, -.71, .71, 0, 0);
+            transform: matrix(.71, .71, -.71, .71, 0, 0);
+            float: right;
+            margin-top: 12px;
+        }
+
+        .weui-cell_primary {
+            color: #666
+        }
+
+        .aui-title-text p {
+            line-height: 32px
+        }
+
+        .aui-title-text p span {
+            float: right;
+            font-size: 12px;
+            color: #999;
+            line-height: 30px
+        }
+    </style>
+</head>
+
+<body ontouchstart>
+<div class="page__bd page__bd_store_list">
+    <div class="aui-flex aui-flex-clear" id="front">
+        <div class="bsize-padding"><img src="" alt="正面预览" width="100%" id="resultFront"/></div>
+        <a  class="weui-tabbar__item weui-tabbar__item-index" id="frontBtn">
+            <div class="weui-tabbar__icon">
+                <img src="demo/images/add03.png" alt="">
+            </div>
+            <p class="weui-tabbar__label" >上传正面</p>
+        </a>
+    </div>
+
+    <div class="aui-flex aui-flex-clear" id="back">
+        <div class="bsize-padding"><img src="" alt="反面预览" width="100%" id="resultBack"/></div>
+        <!--<button id="backBtn">上传反面</button>-->
+        <a  class="weui-tabbar__item weui-tabbar__item-index" id="backBtn">
+            <div class="weui-tabbar__icon">
+                <img src="demo/images/add03.png" alt="">
+            </div>
+            <p class="weui-tabbar__label" >上传反面</p>
+        </a>
+
+    </div>
+</div>
+
+
+<div class="foot-divs"></div>
+<div class="weui-tabbar">
+    <a  class="weui-tabbar__item weui-tabbar__item-index" id="back1">
+        <div class="weui-tabbar__icon">
+            <img src="demo/images/return.png" alt="">
+        </div>
+        <p class="weui-tabbar__label">返回</p>
+    </a>
+    <a id="next" class="weui-tabbar__item weui-tabbar__item-index">
+        <div class="weui-tabbar__icon">
+            <img src="demo/images/next.png" alt="">
+        </div>
+        <p class="weui-tabbar__label">下单</p>
+    </a>
+</div>
+
+<script src="demo/lib/jquery-2.1.4.js"></script>
+<script src="demo/lib/fastclick.js"></script>
+<script>
+    $(function () {
+        FastClick.attach(document.body);
+    });
+</script>
+<script src="demo/js/jquery-weui.js"></script>
+<script src="js/custom.js"></script>
+
+</body>
+
+</html>

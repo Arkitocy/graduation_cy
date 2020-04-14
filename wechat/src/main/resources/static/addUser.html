@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>注册会员</title>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+<meta name="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
+">
+<link rel="stylesheet" href="/xszadmin/demo/lib/weui.min.css">
+<link rel="stylesheet" href="/xszadmin/demo/css/jquery-weui.css">
+<link rel="stylesheet" href="/xszadmin/demo/css/style.css">
+<style>
+.weui-check__label{color:#666}
+.weui-btn_primary{position:fixed;bottom:0;left:0px;background:#f3ad11;width:100%;border-radius:0px;}
+.weui-label span{color:#f00}
+.weui-cells__title{font-size:16px}
+.scancar{width:26px}
+</style>
+  </head>
+
+  <body style="background:#e6e6e6" ontouchstart>
+ 
+    <div class="weui-cells weui-cells_form" style="margin-top:0px;">
+	<div class="weui-cells__title">会员信息</div>
+
+
+
+      <div class="weui-cell">
+        <div class="weui-cell__hd"><label class="weui-label"><label id="loginuname"></label></label></div>
+        <div class="weui-cell__bd">
+          <img class="weui-media-box__thumb" id="loginuheadimgurl" alt="">
+        </div>
+      </div>
+
+      <div class="weui-cell">
+        <div class="weui-cell__hd"><label class="weui-label">姓名<span>*<span></label></div>
+        <div class="weui-cell__bd">
+          <input class="weui-input carno" type="text" id="uname" placeholder="请输入姓名">
+        </div>
+      </div>
+	 
+	  <div class="weui-cell">
+        <div class="weui-cell__hd"><label class="weui-label">手机号码</label></div>
+        <div class="weui-cell__bd">
+          <input class="weui-input vin" type="text" id="umobile"  placeholder="请输入手机号码">
+        </div>
+      </div>
+	  
+	  <div class="weui-cell">
+        <div class="weui-cell__hd"><label class="weui-label">性别</label></div>
+        <div class="weui-cell__bd">
+          <input class="weui-input vin" type="text" id="usex"  placeholder="请输入性别">
+        </div>
+      </div>
+
+      <div class="weui-cell">
+        <div class="weui-cell__hd"><label class="weui-label">年龄</label></div>
+        <div class="weui-cell__bd">
+          <input class="weui-input vin" type="text" id="uage"  placeholder="请输入年龄">
+        </div>
+      </div>
+      <input  type="hidden" id="openidinput">
+</div>
+
+<a  class="weui-btn weui-btn_primary" id="usubmit">提交</a>
+<script src="/xszadmin/demo/lib/jquery-2.1.4.js"></script>
+<script src="/xszadmin/demo/lib/fastclick.js"></script>
+<script src="/xszadmin/demo/js/jquery-weui.js"></script>
+    <script src="/xszadmin/js/adduser.js"></script>
+  </body>
+</html>

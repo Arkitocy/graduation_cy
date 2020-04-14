@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>提交订单</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="demo/lib/weui.min.css">
+    <link rel="stylesheet" href="demo/css/jquery-weui.css">
+    <link rel="stylesheet" href="demo/css/style.css">
+    <style>
+        .weui-panel__hd:after {
+            border: none
+        }
+
+        .weui-cell:before {
+            border-top: 0px
+        }
+
+        .page__pd {
+            min-height: 500px
+        }
+
+        .weui-tabbar__item {
+            font-size: 18px;
+            text-align: center;
+            line-height: 50px;
+            color: #fff;
+            background: #fff
+        }
+
+        .weui-tabbar__item p {
+            color: #333;
+            line-height: 25px;
+            text-align: left;
+            text-indent: 5px;
+            font-size: 15px;
+        }
+
+        .weui-tabbar__item-lists {
+            background: #F30
+        }
+
+        a.weui-media-box {
+            width: 100%
+        }
+
+        .weui-media-box__desc i {
+            color: #f30;
+            font-size: 18px
+        }
+
+        .weui-media-box__desc span {
+            float: right
+        }
+
+        .weui-panel__hd, .weui-cell_swiped {
+            border-bottom: 1px solid #e5e5e5
+        }
+
+        .weui-swiped-btn {
+            padding: 40px 1em
+        }
+    </style>
+</head>
+<body ontouchstart>
+
+<div class="page__pd">
+    <div class="weui-panel weui-panel_access">
+        <div class="weui-cells__title">
+            <img src="demo/images/return.png" style="float:left;margin-right:5px;width:22px" alt="" id="backIcon">
+            订单详情
+        </div>
+
+
+        <div class="weui-panel__bd">
+            <div class="weui-cell weui-cell_swiped">
+                <div class="weui-cell__bd" id="consigneeContactAddress">
+                    <div class="weui-cell">
+                        <a href="javascript:void(0);" class="weui-media-box weui-media-box_appmsg">
+                            <div class="weui-media-box__hd">
+                                <img class="weui-media-box__thumb" src="demo/images/location.png" alt="">
+                            </div>
+                            <div class="weui-media-box__bd">
+                                <h4 class="weui-media-box__title" id="consignee"></h4>
+                                <p class="weui-media-box__desc" id="ConsigneeTel"></p>
+                                <p class="weui-media-box__desc" id="ConsigneeAddr"></p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="weui-cell weui-cell_swiped">
+                <div class="weui-cell__bd">
+                    <div class="weui-cell">
+                        <a href="javascript:void(0);" class="weui-media-box weui-media-box_appmsg">
+                            <div class="weui-media-box__hd">
+                                <!--商品图片-->
+                                <img class="weui-media-box__thumb" src="" alt="" id="goodsImg">
+                            </div>
+                            <div class="weui-media-box__bd">
+                                <h4 class="weui-media-box__title" id="goodsTitle"></h4>
+                                <p class="weui-media-box__desc"><i id="goodsPrice"></i></p>
+                            </div>
+                        </a>
+                    </div>
+
+
+                    <div class="weui-flex">
+                        <div class="weui-flex__item">
+                            <div class="placeholder">
+                                数量
+                            </div>
+                        </div>
+                        <div class="weui-flex__item">
+                            <div class="placeholder">
+
+                            </div>
+                        </div>
+                        <div class="weui-flex__item">
+                            <div class="placeholder">
+                                <div class="weui-count">
+                                    <a class="weui-count__btn weui-count__decrease" id="decrease"></a>
+                                    <input class="weui-count__number" id="goodsNum">
+                                    <a class="weui-count__btn weui-count__increase" id="increase"></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+<!--<div class="weui-footer">-->
+<!--    <p class="weui-footer__links">-->
+<!--        <a href="javascript:;" class="weui-footer__link">智能门店</a>-->
+<!--    </p>-->
+<!--    <p class="weui-footer__text">Copyright © 2019 广州微位科技</p>-->
+<!--</div>-->
+
+<div class="foot-divs">
+</div>
+<div class="weui-tabbar">
+
+        <div class="weui-flex__item">
+            <div class="placeholder">
+
+            </div>
+        </div>
+        <div class="weui-flex__item">
+            <div class="placeholder">
+
+            </div>
+        </div>
+        <div class="weui-flex__item">
+            <div class="placeholder">
+				<span class="weui-media-box__title-after" id="sumPrice"></span>
+			</div>
+        </div>
+        <div class="weui-flex__item">
+            <div class="placeholder" id="submit"><a href="javascript:;" class="weui-tabbar__item weui-tabbar__item-lists">
+                提交订单
+            </a></div>
+        </div>
+</div>
+
+<script src="demo/lib/jquery-2.1.4.js"></script>
+<script src="demo/lib/fastclick.js"></script>
+<script>
+    $(function () {
+        FastClick.attach(document.body);
+    });
+</script>
+<script src="js/jquery-weui.js"></script>
+<script>
+    $('.delete-swipeout').click(function () {
+        $(this).parents('.weui-cell').remove()
+    })
+</script>
+<script>
+    $("#payway").select({
+        title: "选择支付方式",
+        items: ["余额支付 -￥0", "微信"],
+        onChange: function (d) {
+        },
+        onClose: function () {
+        },
+        onOpen: function () {
+        },
+    });
+</script>
+<script>
+    $("#carNo").select({
+        title: "选择使用车辆",
+        items: ["新增车辆", "粤A12312", "粤B12312"],
+        onChange: function (d) {
+            console.log(this, d);
+        },
+        onClose: function () {
+            console.log("close");
+        },
+        onOpen: function () {
+            console.log("open");
+        },
+    });
+    $('.weui-tabbar__item-lists').click(function () {
+        $.showLoading();
+        setTimeout(function () {
+            $.hideLoading();
+            window.location.href = "demo/msg.html";
+        }, 3000)
+    })
+</script>
+<script src="js/order.js"></script>
+</body>
+
+</html>
